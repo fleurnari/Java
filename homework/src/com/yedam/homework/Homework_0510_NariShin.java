@@ -9,18 +9,18 @@ public class Homework_0510_NariShin {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		//ÁÖ¾îÁø ¹è¿­À» ÀÌ¿ëÇÏ¿© ´ÙÀ½ ³»¿ëÀ» ±¸ÇöÇÏ¼¼¿ä.
+		//ì£¼ì–´ì§„ ë°°ì—´ì„ ì´ìš©í•˜ì—¬ ë‹¤ìŒ ë‚´ìš©ì„ êµ¬í˜„í•˜ì„¸ìš”.
 		int[] arr1 = { 10, 20, 30, 50, 3, 60, -3 };
 		
-		//¹®Á¦1. ÁÖ¾îÁø ¹è¿­ Áß¿¡¼­ °ªÀÌ 60ÀÎ °÷ÀÇ ÀÎµ¦½º¸¦ Ãâ·ÂÇØº¸ÀÚ.
+		//ë¬¸ì œ1. ì£¼ì–´ì§„ ë°°ì—´ ì¤‘ì—ì„œ ê°’ì´ 60ì¸ ê³³ì˜ ì¸ë±ìŠ¤ë¥¼ ì¶œë ¥í•´ë³´ìž.
 		for (int i = 0; i < arr1.length; i++) {
 			if (arr1[i] == 60) {
-				System.out.println("°ªÀÌ 6ÀÎ °÷ÀÇ ÀÎµ¦½º ¹øÈ£ : " + i + "¹ø");;
+				System.out.println("ê°’ì´ 60ì¸ ê³³ì˜ ì¸ë±ìŠ¤ ë²ˆí˜¸ : " + i + "ë²ˆ");;
 			}
 			
 		}
 		
-		//¹®Á¦2. ÁÖ¾îÁø ¹è¿­ÀÇ ÀÎµ¦½º°¡ 3ÀÎ °÷Àº Ãâ·ÂÇÏÁö ¸»°í, ³ª¸ÓÁö¸¸ Ãâ·ÂÇØº¸ÀÚ.
+		//ë¬¸ì œ2. ì£¼ì–´ì§„ ë°°ì—´ì˜ ì¸ë±ìŠ¤ê°€ 3ì¸ ê³³ì€ ì¶œë ¥í•˜ì§€ ë§ê³ , ë‚˜ë¨¸ì§€ë§Œ ì¶œë ¥í•´ë³´ìž.
 		for(int i = 0; i < arr1.length; i++) {
 			if (i == 3) {
 				continue;
@@ -28,19 +28,19 @@ public class Homework_0510_NariShin {
 			System.out.println("arr1[" + i + "] : " + arr1[i]);
 		}
 		
-		//¹®Á¦3. ÁÖ¾îÁø ¹è¿­ ¾ÈÀÇ º¯°æÇÏ°í ½ÍÀº °ªÀÇ ÀÎµ¦½º ¹øÈ£¸¦ ÀÔ·Â¹Þ¾Æ, ±× °ªÀ» 1000À¸·Î º¯°æÇØº¸ÀÚ.
-  		//   ÀÔ·Â) ÀÎµ¦½º: 3 ->   {10, 20, 30, 1000, 3, 60, -3}
-		System.out.println("º¯°æÇÏ°í ½ÍÀº ÀÎµ¦½º ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
+		//ë¬¸ì œ3. ì£¼ì–´ì§„ ë°°ì—´ ì•ˆì˜ ë³€ê²½í•˜ê³  ì‹¶ì€ ê°’ì˜ ì¸ë±ìŠ¤ ë²ˆí˜¸ë¥¼ ìž…ë ¥ë°›ì•„, ê·¸ ê°’ì„ 1000ìœ¼ë¡œ ë³€ê²½í•´ë³´ìž.
+  		//   ìž…ë ¥) ì¸ë±ìŠ¤: 3 ->   {10, 20, 30, 1000, 3, 60, -3}
+		System.out.println("ë³€ê²½í•˜ê³  ì‹¶ì€ ì¸ë±ìŠ¤ ë²ˆí˜¸ë¥¼ ìž…ë ¥í•˜ì„¸ìš”.");
 		int indNum = Integer.parseInt(sc.nextLine());
 		arr1[indNum] = 1000;
 		System.out.println(Arrays.toString(arr1));
 		
 		
-		//¹®Á¦4. º°µµÀÇ ¹è¿­À» ¼±¾ðÇÏ¿© ¾çÀÇ Á¤¼ö 10°³¸¦ ÀÔ·Â¹Þ¾Æ ¹è¿­¿¡ ÀúÀåÇÏ°í, ¹è¿­¿¡ ÀÖ´Â Á¤¼ö Áß¿¡¼­ 3ÀÇ ¹è¼ö¸¸ Ãâ·ÂÇØº¸ÀÚ.
+		//ë¬¸ì œ4. ë³„ë„ì˜ ë°°ì—´ì„ ì„ ì–¸í•˜ì—¬ ì–‘ì˜ ì •ìˆ˜ 10ê°œë¥¼ ìž…ë ¥ë°›ì•„ ë°°ì—´ì— ì €ìž¥í•˜ê³ , ë°°ì—´ì— ìžˆëŠ” ì •ìˆ˜ ì¤‘ì—ì„œ 3ì˜ ë°°ìˆ˜ë§Œ ì¶œë ¥í•´ë³´ìž.
 		int[] tmpArray = new int[10];
 		
 		for (int i = 0; i < tmpArray.length; i++) {
-			System.out.println("¹è¿­¿¡ ÀúÀåÇÒ ¼ýÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
+			System.out.println("ë°°ì—´ì— ì €ìž¥í•  ìˆ«ìžë¥¼ ìž…ë ¥í•˜ì„¸ìš”.");
 			int data = Integer.parseInt(sc.nextLine());
 			tmpArray[i] = data;
 		}
@@ -49,19 +49,19 @@ public class Homework_0510_NariShin {
 		
 		for (int i = 0; i < tmpArray.length; i++) {
 			if (tmpArray[i] % 3 == 0) {
-				System.out.println("3ÀÇ ¹è¼ö tmpArray[" + i + "] : " + tmpArray[i]);
+				System.out.println("3ì˜ ë°°ìˆ˜ tmpArray[" + i + "] : " + tmpArray[i]);
 			}
 		}
 		
 
-		//Ãß°¡¹®Á¦
-		//X´ëÇÐ M±³¼ö´ÔÀº ÇÁ·Î±×·¡¹Ö ¼ö¾÷À» ¸Ã°í ÀÖ´Ù. ±³½Ç¿£ ÇÐ»ýÀÌ 30¸íÀÌ ÀÖ´Âµ¥, ÇÐ»ý ¸íºÎ¿£ °¢ ÇÐ»ýº°·Î 1¹øºÎÅÍ 30¹ø±îÁö Ãâ¼®¹øÈ£°¡ ºÙ¾î ÀÖ´Ù.
-		//±³¼ö´ÔÀÌ ³»ÁØ Æ¯º°°úÁ¦¸¦ 28¸íÀÌ Á¦ÃâÇß´Âµ¥, ±× Áß¿¡¼­ Á¦Ãâ ¾È ÇÑ ÇÐ»ý 2¸íÀÇ Ãâ¼®¹øÈ£¸¦ ±¸ÇÏ´Â ÇÁ·Î±×·¥À» ÀÛ¼ºÇÏ½Ã¿À.
-		//Âü°í : ¹éÁØ https://www.acmicpc.net/problem/5597
+		//ì¶”ê°€ë¬¸ì œ
+		//XëŒ€í•™ Mêµìˆ˜ë‹˜ì€ í”„ë¡œê·¸ëž˜ë° ìˆ˜ì—…ì„ ë§¡ê³  ìžˆë‹¤. êµì‹¤ì—” í•™ìƒì´ 30ëª…ì´ ìžˆëŠ”ë°, í•™ìƒ ëª…ë¶€ì—” ê° í•™ìƒë³„ë¡œ 1ë²ˆë¶€í„° 30ë²ˆê¹Œì§€ ì¶œì„ë²ˆí˜¸ê°€ ë¶™ì–´ ìžˆë‹¤.
+		//êµìˆ˜ë‹˜ì´ ë‚´ì¤€ íŠ¹ë³„ê³¼ì œë¥¼ 28ëª…ì´ ì œì¶œí–ˆëŠ”ë°, ê·¸ ì¤‘ì—ì„œ ì œì¶œ ì•ˆ í•œ í•™ìƒ 2ëª…ì˜ ì¶œì„ë²ˆí˜¸ë¥¼ êµ¬í•˜ëŠ” í”„ë¡œê·¸ëž¨ì„ ìž‘ì„±í•˜ì‹œì˜¤.
+		//ì°¸ê³  : ë°±ì¤€ https://www.acmicpc.net/problem/5597
 		
 		int[] studentNum = new int[30];
 		
-		System.out.println("°úÁ¦¸¦ Á¦ÃâÇÑ ÇÐ»ýÀÇ ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
+		System.out.println("ê³¼ì œë¥¼ ì œì¶œí•œ í•™ìƒì˜ ë²ˆí˜¸ë¥¼ ìž…ë ¥í•˜ì„¸ìš”.");
 		for(int i = 1; i <= 28; i++) {
 			studentNum[sc.nextInt() - 1]++;
 		}
