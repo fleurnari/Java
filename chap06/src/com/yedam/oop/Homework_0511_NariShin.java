@@ -72,7 +72,7 @@ public class Homework_0511_NariShin {
 				exceptMaxTotal += mdArray[i].price;
 			}
 			
-			System.out.println("최고 가격을 가지는 제품명 : " + maxName + "가격 : " + maxPrice);
+			System.out.println("최고 가격을 가지는 제품명 : " + maxName + ", 가격 : " + maxPrice);
 			System.out.println("최고 가격 제품을 제외한 가격 총합 : " + exceptMaxTotal);
 			
 		} else if (selectNo == 5) {
