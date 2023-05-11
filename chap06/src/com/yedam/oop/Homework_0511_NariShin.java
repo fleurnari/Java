@@ -25,7 +25,7 @@ public class Homework_0511_NariShin {
 		while (true) {
 		
 		System.out.println("==========================================================");
-		System.out.println("1. 상품 수 | 2. 상품 및 가격 입력 | 3. 제품별 가격 | 4. 분석 | 4. 종료");
+		System.out.println("1. 상품 수 | 2. 상품 및 가격 입력 | 3. 제품별 가격 | 4. 분석 | 5. 종료");
 		System.out.println("===========================================================");
 		
 		int selectNo = Integer.parseInt(sc.nextLine());
@@ -61,7 +61,19 @@ public class Homework_0511_NariShin {
 					maxName = mdArray[i].name;
 				}
 				
-			} 
+			}
+			
+			for (int i = 0; i < mdArray.length; i++) {
+				
+				if (mdArray[i].price == maxPrice) {
+					continue;
+				}
+				
+				exceptMaxTotal += mdArray[i].price;
+			}
+			
+			System.out.println("최고 가격을 가지는 제품명 : " + maxName + "가격 : " + maxPrice);
+			System.out.println("최고 가격 제품을 제외한 가격 총합 : " + exceptMaxTotal);
 			
 		} else if (selectNo == 5) {
 			System.out.println("프로그램 종료");
