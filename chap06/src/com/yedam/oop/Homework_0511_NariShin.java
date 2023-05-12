@@ -83,7 +83,7 @@ public class Homework_0511_NariShin {
 		}
 		
 		
-		}
+		}	
 	}
 
 }
