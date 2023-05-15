@@ -8,23 +8,26 @@ public class ObesityInfo extends StandardWeightInfo {
 	
 	@Override
 	public void getInformation() {
+		double bmi = getObesity();
+		String bmiCheck;
+		
+		if (bmi < 18.5) {
+			bmiCheck = "저체중";
+		} else if (bmi < 23) {
+			bmiCheck = "정상";
+		} else if (bmi < 25) {
+			bmiCheck = "과체중";
+		} else {
+			bmiCheck = "비만";
+		}
+		
+		
 		System.out.println(name + "님의 신장 " + height + ", 몸무게 " + weight +
-		           ",  "  + getObesity() + "입니다.");
+		           ", "  + bmiCheck + "입니다.");
 	}
 	
 	public double getObesity() {
-		double bmi = (weight - (height - 100) * 0.9) / ((height - 100) * 0.9 / 100);
-		
-		if (bmi <= 18.5) {
-			System.out.print("저체중");
-		} else if (bmi <= 22.9) {
-			System.out.print("정상");
-		} else if (bmi <= 24.9) {
-			System.out.print("과체중");
-		} else {
-			System.out.print("비만");
-		}
-		
+		double bmi = (weight - getStandardWeight()) / getStandardWeight() * 100;
 		return bmi;
 	}
 	
