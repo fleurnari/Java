@@ -4,9 +4,9 @@ public class Application01 {
 	
 	public static void main(String[] args) {
 		// 문제 1
-		EmpDept empDept = new EmpDept("이지나", 3000, "교육부");
-		empDept.getInformation();
-		empDept.print();
+		Employee employee = new EmpDept("이지나", 3000, "교육부");
+		employee.getInformation();
+		employee.print();
 		
 		// 문제 2
 		Human human1 = new StandardWeightInfo("홍길동", 168, 45);
@@ -17,11 +17,11 @@ public class Application01 {
 		
 		// 문제 3
 		Culture culture1 = new Movie("추격자", 7, 5, "액션");
-		culture1.setTotalScore(8);
+		culture1.setTotalScore(4);
 		culture1.getInformation();
 		
 		Culture culture2 = new Performance("지킬앤하이드", 9, 10, "뮤지컬");
-		culture2.setTotalScore(10);
+		culture2.setTotalScore(5);
 		culture2.getInformation();
 		
 		

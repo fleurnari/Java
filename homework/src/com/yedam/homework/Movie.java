@@ -18,7 +18,7 @@ public class Movie extends Culture {
 		System.out.println("영화 제목 : " + title);
 		System.out.println("감독 : " + director);
 		System.out.println("배우 : " + actor);
-		System.out.println("영화 총점 : " + totalScore);
+		System.out.println("영화 총점 : " + score);
 		System.out.println("영화 평점 : " + getGrade());
 
 	}

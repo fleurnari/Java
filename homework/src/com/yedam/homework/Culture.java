@@ -7,7 +7,7 @@ public abstract class Culture {
 	int director;
 	int actor;
 	int audience;
-	int totalScore;
+	int score;
 	
 	// 생성자
 	public Culture(String title, int director, int actor) {
@@ -18,26 +18,17 @@ public abstract class Culture {
 	
 	// 메소드
 	public void setTotalScore(int score) {
-		this.totalScore += score;
+		this.score += score;
 		audience++;
 	}
 	
 	public String getGrade() {
-		int score = (int)totalScore / audience;
+		String star = "";
 		
-		if (score >= 9) {
-			return "☆☆☆☆☆";
-		} else if (score >= 7) {
-			return "☆☆☆☆";
-		} else if (score >= 5) {
-			return "☆☆☆";
-		} else if (score >= 3) {
-			return "☆☆";
-		} else {
-			return "☆";
+		for (int i = 1; i <= score/audience; i++) {
+			star += "☆";
 		}
-
-		
+		return star;
 	}
 	
 	public abstract void getInformation();
