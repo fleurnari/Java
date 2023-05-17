@@ -9,19 +9,6 @@ public class Application03 {
 		
 		boolean run = true;
 		StringGame game = new StringGame();
-		int randomNo = (int)(Math.random() * 4) + 1;
-		
-		if (randomNo == 1) {
-			game.word = "Orange";
-		} else if (randomNo == 2) {
-			game.word = "Game";
-		} else if (randomNo == 3) {
-			game.word = "Phone";
-		} else {
-			game.word = "Smart";
-		}
-		
-		System.out.println(game.word);
 		
 		while(run) {
 			System.out.println("---------------------------------------------");
@@ -33,15 +20,15 @@ public class Application03 {
 			case 1:
 				game.setCharData();
 				break;
-//			case 2:
-//				game.setStrData();
-//				break;
-//			case 3:
-//				game.showCharData();
-//				break;
-//			case 4:
-//				game.init();
-//				break;
+			case 2:
+				game.setStrData();
+				break;
+			case 3:
+				game.showCharData();
+				break;
+			case 4:
+				game.init();
+				break;
 			case 5:
 				run = false;
 				System.out.println("프로그램을 종료합니다.");
