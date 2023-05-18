@@ -8,6 +8,7 @@ public class StringGame {
 	// 필드
 	public String word;
 	
+	// 생성자
 	public StringGame() {
 		int randomNo = (int)(Math.random() * 4) + 1;
 		
@@ -29,42 +30,31 @@ public class StringGame {
 
 	// 메소드
 	public void setCharData() {
-		System.out.println("현재까지 확인된 문자열의 문자들은 다음과 같습니다.");
-		if (strArry.size() == 0) {
-			System.out.println();
+		showCharData();
+		if (strArry.size() == word.length()) {
+			System.out.println("문자열을 구성하는 문자를 다 입력 하셨습니다.");
 		} else {
-		for (int i = 0; i < strArry.size(); i++) {
-			System.out.print(strArry.get(i) + " ");
+			System.out.print("입력 값>>");
+			String data = sc.nextLine();
+			
+			int existData = 0;
+			for (int i = 0; i < word.length(); i++) {
+				if (data.equals(String.valueOf(word.charAt(i)))) {
+					strArry.add(data);
+					existData++;
+				}
 			}
-		System.out.println();
-		}
-		System.out.print("입력 값>>");
-		String data = sc.nextLine();
-		strArry.add(data);
-		
-		int existData = 0;
-		for (int i = 0; i < word.length(); i++) {
-			if (data.equals(String.valueOf(word.charAt(i)))) {
-				existData++;
+			if (existData >= 1) {
+				System.out.println("문자열을 구성하는 문자입니다.");
+			} else {
+				System.out.println("문자열을 구성하는 문자가 아닙니다.");
 			}
-		}
-		if (existData >= 1) {
-			System.out.println("문자열을 구성하는 문자입니다.");
-		} else {
-			System.out.println("문자열을 구성하는 문자가 아닙니다.");
+			
 		}
 	}
 	
 	public void setStrData() {
-		System.out.println("현재까지 확인된 문자열의 문자들은 다음과 같습니다.");
-		if (strArry.size() == 0) {
-			System.out.println();
-		} else {
-		for (int i = 0; i < strArry.size(); i++) {
-			System.out.print(strArry.get(i) + " ");
-			}
-		System.out.println();
-		}
+		showCharData();
 		System.out.print("입력 값>>");
 		String ansWord = sc.nextLine();
 		if (ansWord.equals(word)) {
@@ -97,7 +87,18 @@ public class StringGame {
 	
 	public void init() {
 		StringGame game = new StringGame();
+		int randomNo = (int)(Math.random() * 4) + 1;
+		if (randomNo == 1) {
+			this.word = "orange";
+		} else if (randomNo == 2) {
+			this.word = "game";
+		} else if (randomNo == 3) {
+			this.word = "phone";
+		} else {
+			this.word = "smart";
+		}
 		strArry.clear();
 	}
 
 }
+
