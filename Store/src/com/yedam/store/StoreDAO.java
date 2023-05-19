@@ -76,17 +76,18 @@ public class StoreDAO extends DAO {
 		int result = 0;
 		try {
 			conn();
-			String sql = "INSERT INTO store VALUES (?,?,?,?,?)";
+//			String sql = "INSERT INTO store VALUES (?,?,?,?,?)";
 			// 서브쿼리 활용 번호 자동 부여
-			// String sql = "INSERT INTO store VALUES ((SELECT COUNT(*) FROM store), ?, ?, ?, ?)";
+			 String sql = "INSERT INTO store VALUES ((SELECT COUNT(*) + 1 FROM store), ?, ?, ?, ?)";
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, store.getStoreId());
-			pstmt.setString(2, store.getStoreName());
-			pstmt.setString(3, store.getStoreTel());
-			pstmt.setString(4, store.getStoreAddr());
-			pstmt.setInt(5, store.getStoreSales());
+//			pstmt.setInt(1, store.getStoreId()); // 서브쿼리 사용 시 삭제해준다
+			pstmt.setString(1, store.getStoreName());
+			pstmt.setString(2, store.getStoreTel());
+			pstmt.setString(3, store.getStoreAddr());
+			pstmt.setInt(4, store.getStoreSales());
 			
 			result = pstmt.executeUpdate();
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {

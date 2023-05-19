@@ -47,8 +47,8 @@ public class StoreService {
 	public void insertStore() {
 		Store store = new Store();
 		System.out.println("가게 정보 입력ヾ(≧▽≦*)o");
-		System.out.println("가게 번호>");
-		store.setStoreId(Integer.parseInt(sc.nextLine()));
+//		System.out.println("가게 번호>");
+//		store.setStoreId(Integer.parseInt(sc.nextLine())); 서브쿼리 사용 시 삭제
 		System.out.println("가게명>");
 		store.setStoreName(sc.nextLine());
 		System.out.println("가게 연락처>");
