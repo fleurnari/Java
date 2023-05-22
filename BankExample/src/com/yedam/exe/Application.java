@@ -15,28 +15,28 @@ public class Application {
 
 	private void run() {
 		while(true) {
-		System.out.println("1. 로그인 | 2. 종료");
-		int menu = Integer.parseInt(sc.nextLine());
-		if (menu == 1) {
-			// 로그인
-			if (MemberService.memberInfo == null) {
-				ms.login();
+		if(MemberService.memberInfo == null) {
+			System.out.println("1. 로그인 | 2. 종료");
+			int menu = Integer.parseInt(sc.nextLine());
+			if (menu == 1) {
+				// 로그인
+					ms.login();
+			} else if (menu == 2) {
+				System.out.println("은행 업무 종료");
+				break;
 			} else {
-				// 로그인한 정보를 토대로 고객 / 은행원의 업무를 나눔
-				if (MemberService.memberInfo.getMemberAuth().equals("N")) {
-					new MemberApp();
-				} else if (MemberService.memberInfo.getMemberAuth().equals("A")) {
-					new AccountApp();
-				}
+				System.out.println("잘못 입력");
 			}
-		} else if (menu == 2) {
-			System.out.println("은행 업무 종료");
-			break;
-		} else {
-			System.out.println("잘못 입력");
+		} else if (MemberService.memberInfo != null) {
+			if (MemberService.memberInfo.getMemberAuth().equals("N")) {
+				new MemberApp();
+			} else if (MemberService.memberInfo.getMemberAuth().equals("B")) {
+				new AccountApp();
+			}
 		}
 		
-		}
+		
+	}
 		
 	}
 	

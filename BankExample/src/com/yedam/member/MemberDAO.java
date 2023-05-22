@@ -1,5 +1,8 @@
 package com.yedam.member;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.yedam.comm.DAO;
 
 public class MemberDAO extends DAO {
@@ -40,5 +43,39 @@ public class MemberDAO extends DAO {
 		}
 		return member;
 	}
+	
+	// 고객 계좌 정보 조회 - 고객이 로그인 되어 있는 상태
+	public List<Member> getAccountInfo() {
+		List<Member> list = new ArrayList<>();
+		Member member = null;
+		try {
+			conn();
+			String sql = "SELECT m.member_id, a.account_id, a.account_balance, m.member_name, m.member_auth\r\n"
+					+ "FROM account a JOIN member m\r\n"
+					+ "ON a.member_id = m.member_id\r\n"
+					+ "WHERE a.member_id = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, MemberService.memberInfo.getMemberId());
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				member = new Member();
+				member.setMemberId(rs.getString("member_id"));
+				member.setAccountId(rs.getString("account_id"));
+				member.setAccountBalance(rs.getInt("account_balance"));
+				member.setMemberName(rs.getString("member_name"));
+				member.setMemberAuth(rs.getString("member_auth"));
+				list.add(member);
+			}
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			disconn();
+		}
+		return list;
+	}
+	
 	
 }
