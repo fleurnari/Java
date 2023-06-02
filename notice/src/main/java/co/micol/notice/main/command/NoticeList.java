@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import co.micol.notice.common.Command;
 import co.micol.notice.service.NoticeService;
 import co.micol.notice.service.NoticeVO;
-import co.micol.notice.service.Impl.NoticeServiceImpl;
+import co.micol.notice.serviceImpl.NoticeServiceImpl;
 
 public class NoticeList implements Command {
 

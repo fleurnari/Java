@@ -9,10 +9,10 @@
 </head>
 <body>
 <div align="center">
-	<div><h1>게시글 목록</h1></div>
+	<div><h1>회원 목록 보기</h1></div>
 	<div>
-		<c:forEach items = "${notices}" var = "n">
-			${n.noticeId} : ${n.noticeWriter} : ${n.noticeTitle} : ${n.noticeWdate} : ${n.noticeHit} <br>
+		<c:forEach items="${members}" var="m">
+			${m.memberId} : ${m.memberName} : ${m.memberAge} : ${m.memberTel} : ${m.memberGender} <br>
 		</c:forEach>
 	</div>
 </div>
