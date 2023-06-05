@@ -7,16 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-<div align="center">
 	<div>
-		<jsp:include page="menu.jsp"></jsp:include>
+		<hr>
+		<h1> CopyRight @ Nari Shin 2023</h1>
 	</div>
-	<div>
-		<h1>Welcome to My Web Site</h1>
-	</div>
-	<div>
-		<jsp:include page="footer.jsp"></jsp:include>
-	</div>
-</div>
 </body>
 </html>

@@ -9,11 +9,34 @@
 </head>
 <body>
 <div align="center">
+	<jsp:include page="../main/menu.jsp" />
 	<div><h1>게시글 목록</h1></div>
 	<div>
-		<c:forEach items = "${notices}" var = "n">
-			${n.noticeId} : ${n.noticeWriter} : ${n.noticeTitle} : ${n.noticeWdate} : ${n.noticeHit} <br>
-		</c:forEach>
+	<table border="1">
+		<thead>
+			<tr>
+				<td align="center" width="150">순번</td>
+				<td align="center" width="150">작성자</td>
+				<td align="center" width="150">제목</td>
+				<td align="center" width="150">작성일</td>
+				<td align="center" width="150">조회수</td>
+			</tr>
+		</thead>
+		<tbody>
+			<c:forEach items = "${notices}" var = "n">
+			<tr>
+				<td align="center">${n.noticeId}</td>
+				<td align="center">${n.noticeWriter}</td>
+				<td align="center">${n.noticeTitle}</td>
+				<td align="center">${n.noticeWdate}</td>
+				<td align="center">${n.noticeHit}</td>
+			</tr>
+			</c:forEach>
+		</tbody>
+	</table>
+	</div>
+	<div>
+		<jsp:include page="../main/footer.jsp"></jsp:include>
 	</div>
 </div>
 </body>
