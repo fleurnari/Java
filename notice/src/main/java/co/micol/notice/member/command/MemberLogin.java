@@ -21,7 +21,7 @@ public class MemberLogin implements Command {
 		vo.setMemberId(request.getParameter("memberId"));
 		vo.setMemberPassword(request.getParameter("memberPassword"));
 		
-		vo = ms.memberLogin(vo);
+		vo = ms.memberSelect(vo);
 		if (vo != null) {
 			session.setAttribute("id", vo.getMemberId());
 			session.setAttribute("name", vo.getMemberName());

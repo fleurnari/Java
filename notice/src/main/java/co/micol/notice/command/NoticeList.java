@@ -1,4 +1,4 @@
-package co.micol.notice.main.command;
+package co.micol.notice.command;
 
 import java.util.ArrayList;
 import java.util.List;

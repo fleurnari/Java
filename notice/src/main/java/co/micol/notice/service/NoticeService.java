@@ -8,4 +8,5 @@ public interface NoticeService {
 	int noticeInsert(NoticeVO vo); // 게시물 작성
 	int noticeUpdate(NoticeVO vo); // 게시물 수정
 	int noticeDelete(NoticeVO vo); // 게시물 삭제
+	int noticeHitUpdate(NoticeVO vo); // 조회수 증가
 }

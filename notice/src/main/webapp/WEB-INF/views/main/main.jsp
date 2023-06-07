@@ -15,6 +15,9 @@
 		<h1>Welcome to My Web Site</h1>
 	</div>
 	<div>
+		<img alt="라면" src="img/myhome.JPG">
+	</div>
+	<div>
 		<jsp:include page="footer.jsp"></jsp:include>
 	</div>
 </div>
