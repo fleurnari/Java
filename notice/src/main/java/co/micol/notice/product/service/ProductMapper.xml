@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.micol.notice.product.service.ProductMapper">
+	<select id="productSelectList" resultType="co.micol.notice.product.service.ProductVO">
+		SELECT * FROM PRODUCT ORDER BY PRODUCT_ID ASC
+	</select>
+	<select id="productSelect" resultType="co.micol.notice.product.service.ProductVO">
+		SELECT * FROM PRODUCT WHERE PRODUCT_ID = #{productId}
+	</select>
+	<insert id="productInsert">
+		INSERT INTO PRODUCT VALUES (#{productId}, #{productName},
+									#{productImage}, #{productDir})
+	</insert>
+	<update id="productUpdate">
+		UPDATE PRODUCT
+		<set>
+			<if test="productId != null">PRODUCT_ID = #{productId},</if>
+			<if test="productName != null">PRODUCT_NAME = #{productName},</if>
+			<if test="productImage != null">PRODUCT_IMAGE = #{productImage},</if>
+			<if test="productDir != null">PRODUCT_DIR = #{productDir}</if>
+		</set>
+		WHERE PRODUCT_ID = #{productId}
+	</update>
+	<delete id="productDelete">
+		DELETE FROM PRODUCT WHERE PRODUCT_ID = #{productId}
+	</delete>
+</mapper>
