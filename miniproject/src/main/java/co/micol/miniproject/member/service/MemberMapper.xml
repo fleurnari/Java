@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.micol.miniproject.member.service.MemberMapper">	
+	<select id="memberSelectList" resultType="map">
+		SELECT * FROM MEMBER
+		WHERE MEMBER_DATE BETWEEN #{startDay} AND #{endDay}
+	</select>
+	
+	<select id="memberSelect" resultType="co.micol.miniproject.member.service.MemberVO">
+		SELECT * FROM MEMBER
+		WHERE MEMBER_ID = #{memberId}
+		<if test="memberPassword != null">
+			AND MEMBER_PASSWORD = #{memberPassword}
+		</if>
+	</select>
+
+    <insert id="memberInsert">
+    	INSERT INTO MEMBER
+    	VALUES(
+    		#{memberId},
+    		#{memberPassword},
+    		#{memberName},
+    		#{memberAge},
+    		#{memberTel},
+    		#{memberGender},
+    		#{memberAuthor},
+    		#{memberImage},
+    		#{memberImgDir},
+    		sysdate
+    	)
+    </insert>
+    
+    <delete id="memberDelete">
+    	
+    </delete>
+    
+    <update id="memberUpdate">
+    
+    </update>
+    <select id="memberSearchSelect" resultType="co.micol.miniproject.member.service.MemberVO">
+    	SELECT * FROM MEMBER
+    	WHERE 
+    	<if test = "key == 'all'">1 = 1 </if>
+    	<if test = "key == 'id'">MEMBER_ID = #{val}</if>
+    	<if test = "key == 'name'">MEMBER_NAME = #{val}</if>
+    	<if test = "key == 'tel'">MEMBER_TEL = #{val}</if>
+    	<if test = "key == 'gender'">MEMBER_GENDER = #{val}</if>
+    	<if test = "key == 'age'">MEMBER_AGE = #{val}</if>
+    	<if test = "key == 'date'">
+    		<![CDATA[
+    			MEMBER_DATE >= #{start} AND MEMBER_DATE < #{end}
+			 ]]>
+		</if>
+    </select>
+</mapper>
